@@ -2,13 +2,16 @@
 
 A buildless static holding page. Open `index.html` directly in a browser; no network connection or dependencies are required. Alternatively, from this directory run `python -m http.server 8000` and open http://localhost:8000/.
 
-## Future GitHub Pages deployment
+## Published site
 
-These steps are for a future authorised migration; none have been performed.
+- Primary site: https://blockheavy.co/
+- The `www` address redirects to the primary site over HTTPS.
+- Repository: https://github.com/Euuston/blockheavy-website
+- GitHub Pages publishes from the `master` branch, repository root. The `CNAME` file records the custom domain.
+- HTTPS is enforced by GitHub Pages.
 
-1. Create a dedicated GitHub repository and push the approved files. The entry file `index.html` must be at the root of the selected publishing source.
-2. In repository Settings → Pages, select deployment from a branch and choose the branch and root folder. Visit and verify the GitHub Pages URL provided in settings.
-3. Before changing the domain, review NameSilo's existing DNS **and URL forwarding**, including email-related records, and plan the cutover. Verify the custom domain with GitHub and add it in Pages settings before changing DNS. Follow GitHub's current documentation for the applicable apex and `www` records; preserve email records.
-4. Once DNS and certificate provisioning are complete, enable Enforce HTTPS when available. Verify both `blockheavy.co` and `www.blockheavy.co`, including redirects, HTTPS and the loaded site.
+To update the site, edit the static files, review and commit the changes, then push `master` to `origin`. GitHub Pages deploys the updated branch; check the deployment and live site after publishing.
 
-References: [Create a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site), [Manage a custom domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site), and [Secure with HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https).
+Domain DNS and forwarding are managed separately at NameSilo. Review the existing records and forwarding configuration before making future changes, and preserve unrelated records.
+
+References: [GitHub Pages publishing](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site), [custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site), and [HTTPS](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https).
