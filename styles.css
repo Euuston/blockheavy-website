@@ -1,0 +1,33 @@
+:root {
+  --page-background: #260022;
+  color-scheme: dark;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--page-background);
+  color: #c92323;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+.holding-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.status, .copyright { margin: 0; font-weight: 400; }
+.status { font-size: 1rem; line-height: 1.4; margin-bottom: 3.25rem; }
+.logo { display: block; width: min(10rem, 70vw); height: auto; }
+.copyright { font-size: .875rem; line-height: 1.4; margin-top: 9rem; }
+
+@media (max-height: 500px) {
+  .status { margin-bottom: 1.5rem; }
+  .logo { width: min(10rem, 30vh, 70vw); }
+  .copyright { margin-top: 2rem; }
+}
